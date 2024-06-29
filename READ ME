@@ -1,0 +1,18 @@
+
+
+How it all works: 
+
+Created a database that will list all of the abilities in the video game: valorant
+They will be normalized in third-form normalization. 
+
+The first table listing the abilities name and cost. 
+    This will help with stating what the abilities are before categorizing them further with other sections.
+
+The second table will state the agents name and role. 
+
+The third table will associate abilities with their respective agents. 
+    This table will be used the most going forward as this will help with stating the abilities and agents relationship.
+
+
+
+Upon this point, we have reached the categorization labeling of the abilities
