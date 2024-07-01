@@ -23,6 +23,14 @@ CREATE TABLE Agent_Abilities (
     FOREIGN KEY (agent_id) REFERENCES Agents (agent_id)
 );
 
+CREATE TABLE Ultimates (
+    ult_id INT PRIMARY KEY AUTO_INCREMENT,
+    agent_id INT NOT NULL,
+    ult_name VARCHAR(40),
+    ult_cost INT NOT NULL,
+    FOREIGN KEY (agent_id) REFERENCES Agents (agent_id)
+);
+
 CREATE TABLE Recon ( 
     recon_id INT PRIMARY KEY AUTO_INCREMENT,
     aa_id INT NOT NULL,
@@ -46,5 +54,20 @@ CREATE TABLE Smokes (
     min_duration INT NOT NULL,
     full_duration INT NOT NULL,
     recharge INT NOT NULL,
+    FOREIGN KEY (aa_id) REFERENCES Agent_Abilities (aa_id)
+);
+
+CREATE TABLE Decay ( 
+    decay_id INT PRIMARY KEY AUTO_INCREMENT,
+    aa_id INT NOT NULL,
+    duration INT NOT NULL,
+    full_damage INT NOT NULL, 
+    FOREIGN KEY (aa_id) REFERENCES Agent_Abilities (aa_id)
+);
+
+CREATE TABLE Stun (
+    stun_id INT PRIMARY KEY AUTO_INCREMENT,
+    aa_id INT NOT NULL,
+    duration INT NOT NULL,
     FOREIGN KEY (aa_id) REFERENCES Agent_Abilities (aa_id)
 );
